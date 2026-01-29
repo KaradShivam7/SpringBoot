@@ -1,0 +1,25 @@
+package flipcart.order.entity;
+
+import java.util.UUID;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.ApplicationScope;
+import org.springframework.web.context.annotation.RequestScope;
+import org.springframework.web.context.annotation.SessionScope;
+
+
+@Component
+@ApplicationScope
+public class car {
+	
+	UUID uid=UUID.randomUUID();
+	
+	
+	public String getid() {
+		return this.uid+"";
+	}
+	
+	
+               
+}
