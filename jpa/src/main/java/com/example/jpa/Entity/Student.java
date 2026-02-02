@@ -1,6 +1,8 @@
 package com.example.jpa.Entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
@@ -8,6 +10,7 @@ public class Student {
 	
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int id;
 	String name;
 	String mobile;
@@ -18,9 +21,9 @@ public class Student {
 	public int getId() {
 		return id;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
+//	public void setId(int id) {
+//		this.id = id;
+//	}
 	public String getName() {
 		return name;
 	}
@@ -39,8 +42,4 @@ public class Student {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
-	
-	
-
 }
