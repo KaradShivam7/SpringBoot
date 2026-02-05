@@ -22,8 +22,17 @@ public class User {
 	
 	@OneToMany(mappedBy="user")
 	private List<Address> address;
+	
+	@OneToMany(mappedBy="user")
+	private List<review> review;
 
 	
+	public List<review> getReview() {
+		return review;
+	}
+	public void setReview(List<review> review) {
+		this.review = review;
+	}
 	public List<Address> getAddress() {
 		return address;
 	}

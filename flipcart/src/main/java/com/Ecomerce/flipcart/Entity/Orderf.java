@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Orderf {
@@ -18,12 +19,23 @@ public class Orderf {
 	
 	@JoinColumn(name="userid")
 	@ManyToOne
-	User user;
+	private User user;
 	
 	@ManyToOne
 	@JoinColumn(name="addressid")
 	private Address address;
 	
+	@OneToOne(mappedBy = "order")
+	private review review;
+	
+
+	public review getReview() {
+		return review;
+	}
+
+	public void setReview(review review) {
+		this.review = review;
+	}
 
 	public Address getAddress() {
 		return address;

@@ -12,8 +12,19 @@ public class order_dto {
 	private String pincode;
 	private String state;
 	
+	private String rating;
 	
 	
+	
+	
+	
+	
+	public String getRating() {
+		return rating;
+	}
+	public void setRating(String rating) {
+		this.rating = rating;
+	}
 	public String getCity() {
 		return city;
 	}

@@ -31,6 +31,7 @@ public class Order_service {
 				od.setCity(order.getAddress().getCity());
 				od.setState(order.getAddress().getState());
 				od.setPincode(order.getAddress().getPincode());
+				od.setRating(order.getReview().getRating());
 				
 				
 				return od;})

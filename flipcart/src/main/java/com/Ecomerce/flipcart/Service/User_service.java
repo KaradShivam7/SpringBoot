@@ -11,6 +11,7 @@ import com.Ecomerce.flipcart.DTO.address2;
 import com.Ecomerce.flipcart.Entity.User;
 import com.Ecomerce.flipcart.Repository.User_repository;
 import com.Ecomerce.flipcart.DTO.order2;
+import com.Ecomerce.flipcart.DTO.review2;
 
 @Service
 public class User_service {
@@ -49,7 +50,15 @@ public class User_service {
 						
 						return a2;})
 						.collect(Collectors.toList());
-						
+				
+				List<review2> review2=ud.getReviews().stream()
+						.map((review)->
+						{review2 r2 =new review2();
+						r2.setRating(review.getRating());
+						return r2;})
+						.collect(Collectors.toList());
+				
+				ud.setReviews(review2);
 				ud.setOrders(order2);
 				ud.setAddress(address2);
 				return ud;})
